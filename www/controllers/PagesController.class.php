@@ -1,5 +1,8 @@
 <?php
 
+
+use Core\View;
+
 class PagesController
 {
 
