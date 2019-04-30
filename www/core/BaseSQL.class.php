@@ -21,11 +21,10 @@ class BaseSQL
     }
 
 
-    public function setId($id)
+    public function setId($id) : void
     {
         $this->id = $id;
         $this->getOneBy(["id" => $id], true);
-
     }
 
 
@@ -56,7 +55,7 @@ class BaseSQL
     }
 
 
-    public function save()
+    public function save() : void
     {
 
         $dataObject = get_object_vars($this);
