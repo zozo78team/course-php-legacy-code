@@ -9,8 +9,8 @@ require 'conf.inc.php';
 function myAutoloader($class)
 {
     $class = substr($class, strpos($class, '\\') + 1);
-    $classPath = 'Core/' . $class . '.class.php';
-    $classModel = 'Model/' . $class . '.class.php';
+    $classPath = 'Core/' . $class . '.php';
+    $classModel = 'Model/' . $class . '.php';
     if (file_exists($classPath)) {
         include $classPath;
     } else {

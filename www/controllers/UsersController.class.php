@@ -6,12 +6,12 @@ use Core\View;
 class UsersController
 {
 
-    public function defaultAction()
+    public function defaultAction(): void
     {
         echo "users default";
     }
 
-    public function addAction()
+    public function addAction(): void
     {
         $user = new Users();
         $form = $user->getRegisterForm();
@@ -21,7 +21,7 @@ class UsersController
 
     }
 
-    public function saveAction()
+    public function saveAction(): void
     {
 
         $user = new Users();
@@ -53,7 +53,7 @@ class UsersController
     }
 
 
-    public function loginAction()
+    public function loginAction(): void
     {
 
         $user = new Users();
@@ -75,7 +75,7 @@ class UsersController
     }
 
 
-    public function forgetPasswordAction()
+    public function forgetPasswordAction(): void
     {
         $v = new View("forgetPasswordUser", "front");
     }
