@@ -1,4 +1,7 @@
-<?php
+<?php declare(strict_types = 1);
+
+use Core\Validator;
+use Core\View;
 
 class UsersController
 {
