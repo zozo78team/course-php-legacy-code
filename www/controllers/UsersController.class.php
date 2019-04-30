@@ -15,8 +15,6 @@ class UsersController
     {
         $user = new Users();
         $form = $user->getRegisterForm();
-
-
         $v = new View("addUser", "front");
         $v->assign("form", $form);
 
@@ -60,8 +58,6 @@ class UsersController
 
         $user = new Users();
         $form = $user->getLoginForm();
-
-
         $method = strtoupper($form["config"]["method"]);
         $data = $GLOBALS["_" . $method];
         if ($_SERVER['REQUEST_METHOD'] == $method && !empty($data)) {
@@ -73,19 +69,14 @@ class UsersController
                 $token = md5(substr(uniqid() . time(), 4, 10) . "mxu(4il");
                 // TODO: connexion
             }
-
         }
-
         $v = new View("loginUser", "front");
         $v->assign("form", $form);
-
     }
 
 
     public function forgetPasswordAction()
     {
-
         $v = new View("forgetPasswordUser", "front");
-
     }
 }

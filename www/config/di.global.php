@@ -1,10 +1,11 @@
-<?php
+<?php declare(strict_types = 1);
 
 
 use Controllers\PagesController;
+use Model\UserInterface;
 
 return [
-    Users::class => function ($container) {
+    UserInterface::class => function ($container) {
         $host = $container['config']['database']['host'];
         $driver = $container['config']['database']['driver'];
         $name = $container['config']['database']['name'];
@@ -14,8 +15,7 @@ return [
         return new Users($host, $driver, $name, $user, $password);
     },
     UsersController::class => function ($container) {
-        $userModel = $container[Users::class]($container);
-
+        $userModel = $container[UserInterface::class]($container);
         return new UsersController($userModel);
     },
     PagesController::class => function ($container) {
